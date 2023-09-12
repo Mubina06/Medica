@@ -54,5 +54,36 @@
         android:id="@+id/youInFragment"
         android:name="com.example.medica.ui.YouInFragment"
         android:label="fragment_you_in"
-        tools:layout="@layout/fragment_you_in" />
+        tools:layout="@layout/fragment_you_in" >
+        <action
+            android:id="@+id/action_youInFragment_to_createNewAccFragment"
+            app:destination="@id/createNewAccFragment" />
+        <action
+            android:id="@+id/action_youInFragment_to_thirdSplashFragment"
+            app:destination="@id/thirdSplashFragment" />
+        <action
+            android:id="@+id/action_youInFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewAccFragment"
+        android:name="com.example.medica.ui.CreateNewAccFragment"
+        android:label="fragment_create_new_acc"
+        tools:layout="@layout/fragment_create_new_acc" >
+        <action
+            android:id="@+id/action_createNewAccFragment_to_youInFragment"
+            app:destination="@id/youInFragment" />
+        <action
+            android:id="@+id/action_createNewAccFragment_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.medica.ui.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_createNewAccFragment"
+            app:destination="@id/createNewAccFragment" />
+    </fragment>
 </navigation>

@@ -7,17 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.medica.R
-import com.example.medica.databinding.FragmentYouInBinding
+import com.example.medica.databinding.FragmentCreateNewAccBinding
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class YouInFragment : Fragment() {
+class CreateNewAccFragment : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,29 +32,28 @@ class YouInFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentYouInBinding.inflate(layoutInflater)
-        binding.signUp.setOnClickListener{
-            findNavController().navigate(R.id.action_youInFragment_to_createNewAccFragment)
+        val binding = FragmentCreateNewAccBinding.inflate(inflater)
+
+        binding.imageView10.setOnClickListener {
+            findNavController().navigate(R.id.action_createNewAccFragment_to_youInFragment)
         }
 
-        binding.back.setOnClickListener {
-            findNavController().navigate(R.id.action_youInFragment_to_thirdSplashFragment)
+        binding.button2.setOnClickListener {
+            findNavController().navigate(R.id.action_createNewAccFragment_to_logInFragment)
         }
 
-        binding.button.setOnClickListener {
-            findNavController().navigate(R.id.action_youInFragment_to_logInFragment)
+        binding.textView11.setOnClickListener {
+            findNavController().navigate(R.id.action_createNewAccFragment_to_logInFragment)
         }
 
         return binding.root
-
-
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            YouInFragment().apply {
+            CreateNewAccFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
