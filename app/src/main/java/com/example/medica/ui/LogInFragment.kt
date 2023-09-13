@@ -42,6 +42,9 @@ class LogInFragment : Fragment() {
             findNavController().navigate(R.id.action_createNewAccFragment_to_logInFragment)
         }
 
+        binding.button2.setOnClickListener {
+            findNavController().navigate(R.id.action_logInFragment_to_homeFragment)
+        }
 
 
         return binding.root
