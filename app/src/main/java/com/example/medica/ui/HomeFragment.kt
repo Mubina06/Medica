@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         var binding =FragmentHomeBinding.inflate(inflater)
 
         buttonItem = mutableListOf<ButtonItem>()
@@ -51,7 +52,6 @@ class HomeFragment : Fragment() {
         buttonItem.add(ButtonItem("More"))
 
         buttonAdapter = ButtonAdapter(buttonItem, this)
-
         binding.rv2.adapter = buttonAdapter
 
         doctorsItem = mutableListOf<DoctorItem>()
@@ -65,6 +65,9 @@ class HomeFragment : Fragment() {
         doctorsItem.add(DoctorItem(R.drawable.img_25, "Dr Raul Zirkind",  "Neurologists | Franklin Hospital", "4.8 (6.279 reviews)"))
         doctorsItem.add(DoctorItem(R.drawable.img_26, "Dr Elijah Baranick",  "Allergists | JFK Medical Center", "4.6 (3.279 reviews)"))
         doctorsItem.add(DoctorItem(R.drawable.img_27, "Dr Stephen Shute",  "Immunologists | Franklin Hospital", "4.8 (4.279 reviews)"))
+
+        doctorAdapter = DoctorAdapter(doctorsItem, this)
+        binding.rv3.adapter = doctorAdapter
 
 
         return binding.root

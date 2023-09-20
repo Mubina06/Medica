@@ -16,11 +16,10 @@ class DoctorAdapter(val listdoctor: MutableList<DoctorItem>, homeFragment: HomeF
     var onItemClick : ((DoctorItem) -> Unit)? = null
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
-
-        var photo = itemView.findViewById<ImageView>(R.id.img)
-        var namee = itemView.findViewById<TextView>(R.id.named)
-        var tyhos = itemView.findViewById<TextView>(R.id.tyhos)
-        var review = itemView.findViewById<TextView>(R.id.review)
+        var photo: ImageView = itemView.findViewById(R.id.img)
+        var namee: TextView = itemView.findViewById(R.id.named)
+        var tyhos: TextView = itemView.findViewById(R.id.tyhos)
+        var review: TextView = itemView.findViewById(R.id.review)
 
 
     }
@@ -31,11 +30,11 @@ class DoctorAdapter(val listdoctor: MutableList<DoctorItem>, homeFragment: HomeF
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
-        var item = listdoctor.get(position)
+        var item = listdoctor[position]
         holder.photo.setImageResource(item.photo)
-        holder.namee.setText(item.name)
-        holder.tyhos.setText(item.type)
-        holder.review.setText(item.reviews)
+        holder.namee.text = item.name
+        holder.tyhos.text = item.type
+        holder.review.text = item.reviews
 
 
         holder.itemView.setOnClickListener{
